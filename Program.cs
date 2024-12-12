@@ -67,7 +67,7 @@ public class Program
         powerTimer.Start();
     }
 
-    //sends and receives JSON from Sony's REST API
+    //sends and interprets JSON from Sony's REST API
     public static void Send(string method, int id)
     {
         try
@@ -91,9 +91,9 @@ public class Program
             response.EnsureSuccessStatusCode();
 
             var jsonResponse = response.Content.ReadAsStringAsync().Result;
+            JObject jsonResult = JObject.Parse(jsonResponse);
             if (id == 33)    //device info
             {
-                JObject jsonResult = JObject.Parse(jsonResponse);
                 var resultToken = jsonResult.GetValue("result").First;     //the TV returns a lot more than what we need, so we need to select what to display
 
                 var product = $"Device Type: { resultToken.SelectToken("product") }";
@@ -115,21 +115,26 @@ public class Program
 
             if (id == 51)      //current time
             {
-                JObject jsonResult = JObject.Parse(jsonResponse); 
-                var timeToken = jsonResult.GetValue("result").First;       
-                Console.WriteLine($"\nAV Device time: { timeToken }"); 
+                var timeToken = jsonResult.GetValue("result").First;
+                var deviceTime = ($"{timeToken}").Substring(11, 4);
+                //Console.WriteLine($"\nAV Device time: {deviceTime}"); 
+
                 DateTime dateTime = DateTime.Now;
                 var localMachineDateTime = dateTime.ToString();
-                var localTime = localMachineDateTime.Substring(11, 5);
-                Console.WriteLine($"Local Machine time: { localTime } \n");
+                var localTime = localMachineDateTime.Substring(11,4);
+                //Console.WriteLine($"Local Machine time: { localTime } \n");
 
 
-                //if (timeToken != localMachineTime | timeToken == null)  //need to convert this to a string to compare it to the local machine's time
-                //{
-                //    Console.WriteLine("No response from display. Please check connection status.");
-                //}
-                //else
-                //    Console.WriteLine($"Time Check Successful: {timeToken}");        
+                if (deviceTime != localTime | deviceTime == null)  //compare the device being monitored to the machine running the program
+                {
+                    Console.WriteLine("AV Device time is out of sync. Check device network connection.");
+                    Console.WriteLine($"Device { deviceTime} != Local { localTime}");
+                }
+                if (deviceTime == localTime)
+                {
+                    Console.WriteLine($"Time Check Successful: Device {deviceTime} = Local {localTime}");        
+                }
+
 
             }
         }  
