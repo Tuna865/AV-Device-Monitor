@@ -1,0 +1,17 @@
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\AV Device Monitor.exe
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\AV Device Monitor.deps.json
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\AV Device Monitor.runtimeconfig.json
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\AV Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\AV Device Monitor.pdb
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.csproj.AssemblyReference.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.AssemblyInfoInputs.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.AssemblyInfo.cs
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.csproj.CoreCompileInputs.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Devic.25857186.Up2Date
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\refint\AV Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.pdb
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\AV Device Monitor.genruntimeconfig.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\ref\AV Device Monitor.dll

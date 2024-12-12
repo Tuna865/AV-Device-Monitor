@@ -1,0 +1,68 @@
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.exe
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.deps.json
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.runtimeconfig.json
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.dll
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.pdb
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.csproj.AssemblyReference.cache
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfoInputs.cache
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfo.cs
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.csproj.CoreCompileInputs.cache
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device M.50D19D6C.Up2Date
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.dll
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\refint\Device Monitor.dll
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.pdb
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.genruntimeconfig.cache
+C:\Users\Turner Milan\Desktop\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\ref\Device Monitor.dll
+I:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.dll
+I:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\refint\Device Monitor.dll
+I:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.pdb
+i:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.csproj.AssemblyReference.cache
+i:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.GeneratedMSBuildEditorConfig.editorconfig
+i:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfoInputs.cache
+i:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfo.cs
+i:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.csproj.CoreCompileInputs.cache
+I:\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.exe
+I:\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.deps.json
+I:\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.runtimeconfig.json
+I:\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.dll
+I:\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.pdb
+I:\Development\Sony Display Monitor\Device Monitor\bin\Debug\net8.0\Newtonsoft.Json.dll
+I:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device M.50D19D6C.Up2Date
+I:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.genruntimeconfig.cache
+I:\Development\Sony Display Monitor\Device Monitor\obj\Debug\net8.0\ref\Device Monitor.dll
+I:\Development\AV-Device-Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.exe
+I:\Development\AV-Device-Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.deps.json
+I:\Development\AV-Device-Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.runtimeconfig.json
+I:\Development\AV-Device-Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.dll
+I:\Development\AV-Device-Monitor\Device Monitor\bin\Debug\net8.0\Device Monitor.pdb
+I:\Development\AV-Device-Monitor\Device Monitor\bin\Debug\net8.0\Newtonsoft.Json.dll
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.csproj.AssemblyReference.cache
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.GeneratedMSBuildEditorConfig.editorconfig
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfoInputs.cache
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfo.cs
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.csproj.CoreCompileInputs.cache
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device M.50D19D6C.Up2Date
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.dll
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\refint\Device Monitor.dll
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.pdb
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\Device Monitor.genruntimeconfig.cache
+I:\Development\AV-Device-Monitor\Device Monitor\obj\Debug\net8.0\ref\Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Device Monitor.exe
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Device Monitor.deps.json
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Device Monitor.runtimeconfig.json
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Device Monitor.pdb
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.csproj.AssemblyReference.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfoInputs.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.AssemblyInfo.cs
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.csproj.CoreCompileInputs.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device M.50D19D6C.Up2Date
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\refint\Device Monitor.dll
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.pdb
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\Device Monitor.genruntimeconfig.cache
+C:\Users\turne\OneDrive\Desktop\AV-Device-Monitor\obj\Debug\net8.0\ref\Device Monitor.dll
