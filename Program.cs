@@ -111,51 +111,12 @@ public class Program
             Console.WriteLine($"Sending info to TV:\n\t URL: {url}\n\t PSK: {psk}\n" );
             client.DefaultRequestHeaders.Add("X-Auth-PSK", psk);                 //this authentication is required to use Sony's REST API control  
             var response = client.PostAsync(url, jsonContent).Result;
-            Console.WriteLine(response);
+            Console.WriteLine($"Response from Sony REST API: {response}");
             response.EnsureSuccessStatusCode();
             
             var jsonResponse = response.Content.ReadAsStringAsync().Result;
             JObject jsonResult = JObject.Parse(jsonResponse);
-                //if (id == 33)    //device info
-                //{
-                //    var resultToken = jsonResult.GetValue("result").First;     //the TV returns a lot more than what we need, so we need to select what to display
-   
-                //    var product = $"Device Type: { resultToken.SelectToken("product") }";
-                //    var model = $"Model: { resultToken.SelectToken("model") }";
-                //    var serialNumber = $"Serial Number: { resultToken.SelectToken("serial") }";
-                //    var MACAddress = $"MAC Address: { resultToken.SelectToken("macAddr") }";
-                //    var name = $"Name: { resultToken.SelectToken("name") }";
-                
-                //    var avDeviceInfo = $"AV Device Information: \n {product} \n {model} \n {serialNumber} \n {MACAddress} \n {name} \n";
-                //    Console.WriteLine(avDeviceInfo);
 
-                //};
-
-                //if (id == 50)    //power status
-                //{
-                //    if (jsonResponse.Contains("active")) { Console.WriteLine("AV Device is active"); }; 
-                //    if (jsonResponse.Contains("standby")) { Console.WriteLine("AV Device is in standby mode"); };
-                //};
-
-                //if (id == 51)      //current time
-                //{
-                //    var timeToken = jsonResult.GetValue("result").First;
-                //    var deviceTime = ($"{timeToken}").Substring(11, 4);        //returns the full date & time but we just want HH:MM
-
-                //    DateTime dateTime = DateTime.Now;
-                //    var localMachineDateTime = dateTime.ToString();
-                //    var localTime = localMachineDateTime.Substring(11,4);
-
-                //    if (deviceTime != localTime | deviceTime == null)         //compare the device being monitored to the machine running the program; if different time zone, minutes should still be the same 
-                //    {
-                //        Console.WriteLine("AV Device time is out of sync. Check device network connection and/or settings.");
-                //        Console.WriteLine($"Device { deviceTime} != Local { localTime}");
-                //    }
-                //    if (deviceTime == localTime)
-                //    {
-                //        Console.WriteLine($"Time Check Successful: Device {deviceTime} = Local {localTime}");        
-                //    }
-                //}
             switch (id)
             {
                 case 33:
@@ -194,11 +155,8 @@ public class Program
                     {
                         Console.WriteLine($"Time Check Successful: Device {deviceTime} = Local {localTime}");
                     }
-
                     break;
             }
-
-
         }  
         catch (Exception ex)
         {
