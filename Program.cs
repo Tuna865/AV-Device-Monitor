@@ -1,15 +1,20 @@
-﻿using System.Text;
-using System.Text.Json;
-using AV_Device_Monitor;
+﻿using AV_Device_Monitor;
 using Newtonsoft.Json.Linq;
+using System.Net.NetworkInformation;
+using System.Net.Sockets;
+using System.Text;
+using System.Text.Json;
 
 public class Program
 {
-    private static readonly HttpClient _client = new();
+    private static Api Cmds = new();
+    private static readonly HttpClient _httpClient = new();
+    private static TcpClient _tcpClient = new();
+    private static NetworkStream _stream;
+    private static TcpConnectionInformation _connectionInformation;
 
     private static System.Timers.Timer? _powerTimer;
     private static System.Timers.Timer? _statusTimer;
-
 
     public class ConnectionInfo  
     {
@@ -68,7 +73,7 @@ public class Program
     public static void StartTimeCheck()
     {
         _statusTimer = new System.Timers.Timer(300000);
-        _statusTimer.Elapsed += (sender, e) => SendRpcRequest(Api.TimeMethod, Api.TimeId);
+        _statusTimer.Elapsed += (sender, e) => SendAsRpc(Api.TimeMethod, Api.TimeId);
         _statusTimer.AutoReset = true;
        _statusTimer.Start();
     }
@@ -77,7 +82,7 @@ public class Program
     public static void StartPowerPoll()
     {
         _powerTimer = new System.Timers.Timer(3000);
-        _powerTimer.Elapsed += (sender, e) => SendRpcRequest(Api.PowerMethod, Api.TimeId);
+        _powerTimer.Elapsed += (sender, e) => SendAsRpc(Api.PowerMethod, Api.TimeId);
         _powerTimer.AutoReset = true;
         _powerTimer.Start();
     }
@@ -90,7 +95,7 @@ public class Program
         public string? version { get; set; }
     }
 
-    public static void SendRpcRequest(string method, int id, string url = "", string psk = "")         
+    public static void SendAsRpc(string method, int id, string url = "", string psk = "")         
     {
         try
         {
@@ -162,6 +167,62 @@ public class Program
             Console.WriteLine($"Communication with AV Device error.\n\t {ex.Message}");
         }
     }
+
+    public string SendAsTCP(string command)
+    {
+        try
+        {
+            if (_stream == null)
+            {
+                Console.WriteLine("Not connected.");
+                return "";
+            }
+
+            byte[] cmdBytes = Encoding.ASCII.GetBytes(command + "\r");
+            _stream.Write(cmdBytes, 0, cmdBytes.Length);
+
+            byte[] buffer = new byte[256];
+            int bytesRead = _stream.Read(buffer, 0, buffer.Length);
+            string response = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+            Console.WriteLine($"Sent: {command} | Received: {response.Trim()}");
+            return response;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error sending TCP command: {ex.Message}");
+            return "";
+        }
+    }
+
+    public bool Connect()
+    {
+        try
+        {
+            _tcpClient.Connect(_ip, _port);
+            _stream = _tcpClient.GetStream();
+            Console.WriteLine($"Connected to Sony TV at {_ip}:{_port}");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error. Failed to connect: {ex.Message}");
+            return false;
+        }
+    }
+
+    public void Disconnect()
+    {
+        try
+        {
+            _stream?.Close();
+            _tcpClient?.Close();
+            Console.WriteLine("Disconnected.");
+        }
+        catch { }
+    }
+
+
+
 }
 
 
