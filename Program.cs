@@ -1,49 +1,42 @@
 ﻿using System.Text;
 using System.Text.Json;
+using AV_Device_Monitor;
 using Newtonsoft.Json.Linq;
-
 
 public class Program
 {
     private static readonly HttpClient _client = new();
-    private const string _powerMethod = "getPowerStatus";
-    private const string _infoMethod = "getSystemInformation";
-    private const string _timeMethod = "getCurrentTime";
-    private const int _powerId = 50;
-    private const int _infoId = 33;
-    private const int _timeId = 51;
 
-    public class RpcRequest
-    {
-        public string? method { get; set; }
-        public int? id { get; set; }         
-        public object[]? @params { get; set; }
-        public string? version { get; set; }
-    }
+    private static System.Timers.Timer? _powerTimer;
+    private static System.Timers.Timer? _statusTimer;
+
 
     public class ConnectionInfo  
     {
-        public static string? AskUserForIP()
+        public string? IP { get; set; } = string.Empty;
+        public string? PSK { get; set;} = string.Empty;
+
+        public string? AskUserForIP()
         {
             Console.Write("Enter Device IP Address using the format xxx.xxx.xxx.xxx  ");
-            string? ip = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(ip))
+            IP = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(IP))
             {
                 Console.WriteLine("Please enter a valid IP address.");
                 return null;
             }
-            else return ip;
+            return IP;
         }
-        public static string? AskUserForPSK()
+        public string? AskUserForPSK()
         {
             Console.Write("Enter 4 Digit Pre-Shared Key:  ");
-            string? psk = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(psk))
+            PSK = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(PSK))
             {
                 Console.WriteLine("Please enter a valid 4 digit Pre-Shared Key.");
                 return null;
             }
-            else return psk;
+            return PSK;
         }
     }
 
@@ -51,13 +44,15 @@ public class Program
     {
         try
         {
+            ConnectionInfo info = new ConnectionInfo();
             Console.WriteLine("AV-Device-Monitor start \n");
-            string? ip = ConnectionInfo.AskUserForIP();
-            string? psk = ConnectionInfo.AskUserForPSK();
-            string baseURL = $"http://{ip}/sony/system";
-            Console.WriteLine($"Connection info:\n\t {ip}\n\t {psk}\n\t {baseURL}");
+            info.AskUserForIP();
+            info.AskUserForPSK();
 
-            Send(_infoMethod, _infoId, baseURL, psk);   //collect and show device info upon startup 
+            string baseURL = $"http://{info.IP}/sony/system";
+            Console.WriteLine($"Connection info:\n\t {info.IP}\n\t {info.PSK}\n\t {baseURL}");
+
+            SendRpcRequest(Api.InfoMethod, Api.InfoId, baseURL, info.PSK); 
             StartPowerPoll();
             StartTimeCheck();
             Console.ReadLine();     
@@ -68,27 +63,35 @@ public class Program
         }
     }
 
+    
     // time  
-    private static System.Timers.Timer? statusTimer;
     public static void StartTimeCheck()
     {
-        statusTimer = new System.Timers.Timer(300000);
-        statusTimer.Elapsed += (sender, e) => Send(_timeMethod, _timeId);
-        statusTimer.AutoReset = true;
-        statusTimer.Start();
+        _statusTimer = new System.Timers.Timer(300000);
+        _statusTimer.Elapsed += (sender, e) => SendRpcRequest(Api.TimeMethod, Api.TimeId);
+        _statusTimer.AutoReset = true;
+       _statusTimer.Start();
     }
 
     // power status 
-    private static System.Timers.Timer? powerTimer;
+    
     public static void StartPowerPoll()
     {
-        powerTimer = new System.Timers.Timer(3000);
-        powerTimer.Elapsed += (sender, e) => Send(_powerMethod, _powerId);
-        powerTimer.AutoReset = true;
-        powerTimer.Start();
+        _powerTimer = new System.Timers.Timer(3000);
+        _powerTimer.Elapsed += (sender, e) => SendRpcRequest(Api.PowerMethod, Api.TimeId);
+        _powerTimer.AutoReset = true;
+        _powerTimer.Start();
     }
 
-    public static void Send(string method, int id, string url = "", string psk = "")         
+    public class RpcRequest
+    {
+        public string? method { get; set; }
+        public int? id { get; set; }
+        public object[]? @params { get; set; }
+        public string? version { get; set; }
+    }
+
+    public static void SendRpcRequest(string method, int id, string url = "", string psk = "")         
     {
         try
         {
