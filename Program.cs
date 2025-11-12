@@ -74,7 +74,6 @@ public class Program
     }
 
     // power status 
-    
     public static void StartPowerPoll()
     {
         _powerTimer = new System.Timers.Timer(3000);
